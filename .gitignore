@@ -1,0 +1,23 @@
+# Ignore Terraform working directories and Terraform State files.
+**/.terraform
+**/.terraform.lock.hcl
+**/terraform.tfstate*
+**/terraform.plan
+**/terraform.tfvars
+!bootstrap/terraform.tfstate
+**/terraform.auto.tfvars
+**/errored.tfstate
+**/generated
+**/.sshkey_pass
+
+# Ignore VSCode files
+**/.vscode
+
+### Ignore JetBrains files
+**/.idea
+/tf-wr-base-infrastructure.iml
+
+# Ignore ZIP package with Lambda
+/*/*/*/*lambda.zip
+/*/*/*/*.tmp
+**/dist
