@@ -9,7 +9,7 @@ resource "aws_datasync_location_s3" "datasync_location_s3_src" {
 }
 
 resource "aws_datasync_location_s3" "datasync_location_s3_dst" {
-  #provider = "aws.account1"
+  #provider = "aws.account2"
   s3_bucket_arn  = aws_s3_bucket.private_bucket_dst.arn
   subdirectory   = "/dst"
 

@@ -1,6 +1,6 @@
 # Source bucket
 resource "aws_s3_bucket" "private_bucket_src" {
-  bucket = "oredko_src_bucket"
+  bucket = "oredko-src-bucket"
 }
 resource "aws_s3_bucket_acl" "bucket_acl_src" {
   bucket = aws_s3_bucket.private_bucket_src.id
@@ -13,9 +13,15 @@ resource "aws_s3_bucket_versioning" "bucket_versioning_src" {
   }
 }
 
+resource "aws_s3_bucket_object" "subfolder_src" {
+  bucket       = aws_s3_bucket.private_bucket_src.id
+  key          = "src/"
+  content_type = "application/x-directory"
+}
+
 # Destination bucket
 resource "aws_s3_bucket" "private_bucket_dst" {
-  bucket = "oredko_dst_bucket"
+  bucket = "oredko-dst-bucket"
 }
 resource "aws_s3_bucket_acl" "bucket_dst" {
   bucket = aws_s3_bucket.private_bucket_dst.id
@@ -26,5 +32,11 @@ resource "aws_s3_bucket_versioning" "bucket_versioning_dst" {
   versioning_configuration {
     status = "Disabled"
   }
+}
+
+resource "aws_s3_bucket_object" "subfolder_dst" {
+  bucket       = aws_s3_bucket.private_bucket_dst.id
+  key          = "dst/"
+  content_type = "application/x-directory"
 }
 
