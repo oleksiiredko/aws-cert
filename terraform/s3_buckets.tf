@@ -1,6 +1,6 @@
 # Source bucket
 resource "aws_s3_bucket" "private_bucket_src" {
-  bucket = "oredko-src-bucket"
+  bucket = "oredko_src_bucket"
 }
 resource "aws_s3_bucket_acl" "bucket_acl_src" {
   bucket = aws_s3_bucket.private_bucket_src.id
@@ -15,14 +15,12 @@ resource "aws_s3_bucket_versioning" "bucket_versioning_src" {
 
 # Destination bucket
 resource "aws_s3_bucket" "private_bucket_dst" {
-  bucket = "oredko-dst-bucket"
+  bucket = "oredko_dst_bucket"
 }
-
 resource "aws_s3_bucket_acl" "bucket_dst" {
   bucket = aws_s3_bucket.private_bucket_dst.id
   acl    = "private"
 }
-
 resource "aws_s3_bucket_versioning" "bucket_versioning_dst" {
   bucket = aws_s3_bucket.private_bucket_dst.id
   versioning_configuration {
