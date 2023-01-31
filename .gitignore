@@ -21,3 +21,6 @@
 /*/*/*/*lambda.zip
 /*/*/*/*.tmp
 **/dist
+
+# Ignore tf logs
+*.log 

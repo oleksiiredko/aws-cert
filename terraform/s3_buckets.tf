@@ -12,11 +12,9 @@ resource "aws_s3_bucket_versioning" "bucket_versioning_src" {
     status = "Disabled"
   }
 }
-
-resource "aws_s3_bucket_object" "subfolder_src" {
-  bucket       = aws_s3_bucket.private_bucket_src.id
-  key          = "src/"
-  content_type = "application/x-directory"
+resource "aws_s3_object" "folder_src" {
+  bucket = aws_s3_bucket.private_bucket_src.id
+  key    = "src/"
 }
 
 # Destination bucket
@@ -33,10 +31,7 @@ resource "aws_s3_bucket_versioning" "bucket_versioning_dst" {
     status = "Disabled"
   }
 }
-
-resource "aws_s3_bucket_object" "subfolder_dst" {
-  bucket       = aws_s3_bucket.private_bucket_dst.id
-  key          = "dst/"
-  content_type = "application/x-directory"
+resource "aws_s3_object" "folder_dst" {
+  bucket = aws_s3_bucket.private_bucket_dst.id
+  key    = "dst/"
 }
-

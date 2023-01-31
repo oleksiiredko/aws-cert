@@ -4,7 +4,7 @@ resource "aws_datasync_location_s3" "datasync_location_s3_src" {
   subdirectory   = "/src"
 
   s3_config {
-    bucket_access_role_arn = aws_iam_role.destination.arn
+    bucket_access_role_arn = aws_iam_role.source.arn
   }
 }
 
@@ -14,6 +14,6 @@ resource "aws_datasync_location_s3" "datasync_location_s3_dst" {
   subdirectory   = "/dst"
 
   s3_config {
-    bucket_access_role_arn = aws_iam_role.source.arn
+    bucket_access_role_arn = aws_iam_role.destination.arn
   }
 }
