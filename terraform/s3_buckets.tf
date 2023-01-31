@@ -19,7 +19,8 @@ resource "aws_s3_object" "folder_src" {
 
 # Destination bucket
 resource "aws_s3_bucket" "private_bucket_dst" {
-  bucket = "oredko-dst-bucket"
+  provider = aws.destination 
+  bucket   = "denis-dst-bucket"
 }
 resource "aws_s3_bucket_acl" "bucket_dst" {
   bucket = aws_s3_bucket.private_bucket_dst.id

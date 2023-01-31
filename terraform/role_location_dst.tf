@@ -30,8 +30,8 @@ resource "aws_iam_policy" "destination" {
           "s3:*"
   			],
   			"Resource": [
-  				"arn:aws:s3:::oredko-dst-bucket",
-  				"arn:aws:s3:::oredko-dst-bucket/*"
+  				"arn:aws:s3:::denis-dst-bucket",
+  				"arn:aws:s3:::denis-dst-bucket/*"
   			]
   		},
   		{
